@@ -78,8 +78,6 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleDrawer = () => setIsOpen(!isOpen)
 
-  console.log("isOpen", isOpen)
-
   return (
     <Header>
       <NavContainer>
