@@ -103,7 +103,7 @@ const Navigation: React.FC = () => {
               </li>
             </ul>
           </Nav>
-          <JoinButton>Join Us</JoinButton>
+          <JoinButton to="/membership">Join Us</JoinButton>
           <NavButton onClick={toggleDrawer}>
             <FaBars size="1.6em" />
           </NavButton>

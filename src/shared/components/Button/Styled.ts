@@ -1,12 +1,11 @@
 import styled from "styled-components"
-
 import { color, font } from "../../utils/styles"
 
-type ButtonProps = {
+type StyledButtonProps = {
   fullWidth?: boolean
 }
 
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-block;
   cursor: pointer;
   padding: 0.75rem 1rem;

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import Logo from "../Logo"
 
@@ -70,15 +71,15 @@ export const Nav = styled.nav`
       li a {
         ${text.body1}
         display: inline-block;
-        padding: 1rem;
+        margin: 0 1rem;
         position: relative;
         width: auto;
-        text-transform: uppercase;
         color: ${color.textBlack};
         border: none;
 
         &:hover {
           color: ${color.primary};
+          transition: color 200ms ease-in-out 0s;
         }
       }
     }
@@ -91,7 +92,7 @@ export const ButtonContainer = styled.div`
   padding: 1rem;
 `
 
-export const JoinButton = styled.button`
+export const JoinButton = styled(Link)`
   display: none;
 
   @media ${device.lg} {

@@ -69,11 +69,6 @@ const Contact = () => {
               action="https://getform.io/f/fd2bd953-1782-4dc3-92e6-0cfb3b7180e5"
               method="POST"
             >
-              <input
-                type="hidden"
-                id="captchaResponse"
-                name="g-recaptcha-response"
-              ></input>
               <label>Email</label>
               <input
                 type="email"

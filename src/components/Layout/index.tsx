@@ -13,7 +13,6 @@ const Notification = styled.div`
   margin-top: 80px;
   padding: 10px 35px;
   background-color: #c99a05;
-
   color: #ffffff;
 
   a {
@@ -27,7 +26,7 @@ const Footer = styled.div`
   margin-top: auto;
   padding: 10px 35px;
   text-align: center;
-  color: #666666;
+  color: #ffffff;
   background-color: #000000;
 `
 
@@ -44,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
       <Notification>
         All practices at dojo has been canceled due to COVID 19 until further
         notice. If you want to join our Zoom practice, please{" "}
-        <Link to="/contact-us">contact us</Link>.
+        <Link to="/contact">contact us</Link>.
       </Notification>
       <Main>{children}</Main>
       <Footer>
