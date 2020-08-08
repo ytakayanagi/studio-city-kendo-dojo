@@ -6,10 +6,9 @@ import { size } from "../../utils/styles"
 const StyledDivider = styled.hr`
   width: 100%;
   margin: 0 auto;
-  background: #dfe1e5;
-  height: 2px;
+  background: #c6beb8;
+  height: 1px;
   border: none;
-  max-width: ${size.xl};
   text-align: center;
 `
 

@@ -11,12 +11,16 @@ import {
   zIndexValues,
 } from "../../shared/utils/styles"
 
+type NavDrawerProps = {
+  isOpen: boolean
+}
+
 export const Header = styled.header`
   display: block;
   width: 100%;
   padding: 0;
   height: 80px;
-  background-color: white;
+  background-color: #ffffff;
   z-index: ${zIndexValues.navigation};
   top: 0;
   position: fixed;
@@ -64,7 +68,6 @@ export const Nav = styled.nav`
       justify-content: flex-start;
       flex: 1;
       list-style-type: none;
-      background: #fff;
       margin: 0 15px;
       padding: 0;
 
@@ -74,11 +77,11 @@ export const Nav = styled.nav`
         margin: 0 1rem;
         position: relative;
         width: auto;
-        color: ${color.textBlack};
+        color: #231f20;
         border: none;
 
         &:hover {
-          color: ${color.primary};
+          color: #ae8932;
           transition: color 200ms ease-in-out 0s;
         }
       }
@@ -133,5 +136,56 @@ export const NavButton = styled.button`
 
   @media ${device.lg} {
     display: none;
+  }
+`
+export const NavDrawer = styled.div<NavDrawerProps>`
+  height: 100%;
+  width: ${props => (props.isOpen ? 100 : 0)}%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  @media ${device.lg} {
+    display: none;
+  }
+`
+
+export const NavDrawerHeader = styled.div`
+  padding: 20px 30px;
+  height: 41px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
+
+export const EndButton = styled.button`
+  justify-self: end;
+  background: 0 0;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+
+  &:active,
+  &:visited,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+`
+
+export const NavDrawerList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 20px 30px;
+
+  a {
+    color: ${color.textBlack};
   }
 `

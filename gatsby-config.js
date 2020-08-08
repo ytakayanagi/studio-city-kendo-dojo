@@ -39,6 +39,12 @@ module.exports = {
     //   },
     // },
     "gatsby-plugin-next-seo",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon-32x32.png`,
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-typescript",

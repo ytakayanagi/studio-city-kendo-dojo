@@ -13,7 +13,7 @@ import Divider from "../shared/components/Divider"
 
 export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "hero-image.jpg" }) {
+    heroImage: file(relativePath: { eq: "hero-image.png" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -21,16 +21,16 @@ export const query = graphql`
         }
       }
     }
-    auskfLogo: file(relativePath: { eq: "auskf-logo.jpg" }) {
+    auskfLogo: file(relativePath: { eq: "auskf-logo.png" }) {
       childImageSharp {
-        fixed(height: 60) {
+        fixed(height: 150, grayscale: true) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    sckoLogo: file(relativePath: { eq: "scko-logo.jpg" }) {
+    sckoLogo: file(relativePath: { eq: "scko-logo.png" }) {
       childImageSharp {
-        fixed(height: 60) {
+        fixed(height: 150, grayscale: true) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -112,7 +112,7 @@ const OrganizationTitle = styled.h4`
 const OrganizationLogo = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 `
 

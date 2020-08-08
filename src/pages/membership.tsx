@@ -15,7 +15,7 @@ import Divider from "../shared/components/Divider"
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "join-image.jpg" }) {
+    file(relativePath: { eq: "join-image.png" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid

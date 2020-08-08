@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, PageProps } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import Img from "gatsby-image"
 
-import { device, size } from "../shared/utils/styles"
+import { size } from "../shared/utils/styles"
 
 import Layout from "../components/Layout"
 import Section from "../shared/components/Section"

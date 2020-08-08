@@ -19,7 +19,7 @@ export const zIndexValues = {
 }
 
 export const color = {
-  primary: "#c99a05",
+  primary: "#27221d",
   primaryHover: "#0047B3",
   success: "#0B875B",
   danger: "#E13C3C",
@@ -28,7 +28,8 @@ export const color = {
 
   textBlack: "#000000",
   textWhite: "#FFFFFF",
-  textLink: "#0052CC",
+  textLink: "#ae8932",
+  textLinkHover: "#866a27",
 }
 
 export const font = {
