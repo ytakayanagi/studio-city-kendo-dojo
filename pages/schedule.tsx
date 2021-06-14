@@ -1,7 +1,7 @@
 import { ClockIcon, UsersIcon, VideoCameraIcon } from '@heroicons/react/outline'
 import { NextSeo } from 'next-seo'
 
-export default function Schedule() {
+export default function Schedule(): JSX.Element {
   return (
     <>
       <NextSeo title="Schedule" />
@@ -78,9 +78,9 @@ export default function Schedule() {
                 <div className="mt-3">
                   <p className="text-lg text-gray-500">
                     We are offering this practice during COVID-19. If you still
-                    haven't completed your vaccine, too young to get a vaccine
-                    or feel more secure practicing at home, this is a good
-                    practice to join. Please contact us to join our Zoom
+                    haven&apos;t completed your vaccine, too young to get a
+                    vaccine or feel more secure practicing at home, this is a
+                    good practice to join. Please contact us to join our Zoom
                     practice for more details.
                   </p>
                 </div>

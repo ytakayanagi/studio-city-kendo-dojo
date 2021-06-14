@@ -8,7 +8,7 @@ import '../styles/globals.css'
 import Layout from '../container/Layout/Layout'
 import Alert from '../components/Alert/Alert'
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider attribute="class">
       <DefaultSeo {...SEO} />

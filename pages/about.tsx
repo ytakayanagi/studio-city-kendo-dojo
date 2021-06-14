@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo'
 
-export default function About() {
+export default function About(): JSX.Element {
   return (
     <>
       <NextSeo title="About" />

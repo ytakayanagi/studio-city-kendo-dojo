@@ -18,7 +18,7 @@ const membershipFees = [
   },
 ]
 
-export default function Membership() {
+export default function Membership(): JSX.Element {
   return (
     <>
       <NextSeo title="Membership" />
