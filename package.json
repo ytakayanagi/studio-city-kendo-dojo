@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
@@ -26,18 +26,13 @@
   },
   "dependencies": {
     "@formspree/react": "^2.2.3",
-    "@hcaptcha/react-hcaptcha": "^0.3.6",
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
-    "@sendgrid/mail": "^7.4.4",
     "next": "^10.2.4-canary.4",
     "next-seo": "^4.24.0",
     "next-themes": "^0.0.14",
-    "node-fetch": "^2.6.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-google-recaptcha": "^2.1.0",
-    "react-google-recaptcha-v3": "^1.9.4",
     "react-stickynode": "^3.0.5"
   },
   "devDependencies": {
