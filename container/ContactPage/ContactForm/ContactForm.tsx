@@ -33,7 +33,7 @@ const ContactForm = () => {
       <ScriptLoader src="https://www.google.com/recaptcha/api.js" async defer />
       <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
         <h3 className="text-lg font-medium text-gray-900">Send us a message</h3>
-        <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-2 gap-y-6">
+        <form onSubmit={handleSubmit} className="mt-6 grid gap-y-6">
           <div className="sm:col-span-2">
             <label
               htmlFor="name"
