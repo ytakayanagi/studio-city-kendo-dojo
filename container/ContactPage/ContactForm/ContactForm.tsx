@@ -1,7 +1,7 @@
 import React from 'react'
-import ScriptLoader from 'next/script'
 import { useForm } from '@formspree/react'
 import { CheckIcon } from '@heroicons/react/solid'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 const ContactForm = () => {
   const [state, handleSubmit] = useForm('xrgrkqnp')
@@ -30,7 +30,6 @@ const ContactForm = () => {
 
   return (
     <>
-      <ScriptLoader src="https://www.google.com/recaptcha/api.js" async defer />
       <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
         <h3 className="text-lg font-medium text-gray-900">Send us a message</h3>
         <form onSubmit={handleSubmit} className="mt-6 grid gap-y-6">
@@ -93,10 +92,11 @@ const ContactForm = () => {
               />
             </div>
           </div>
-          <div
-            className="g-recaptcha"
-            data-sitekey="6LcGdBgbAAAAALYn25VCDfZpIEF5wmXhtqvpIkuz"
-          />
+          <ReCAPTCHA sitekey="6LcGdBgbAAAAALYn25VCDfZpIEF5wmXhtqvpIkuz" />
+          {/*<div*/}
+          {/*  className="g-recaptcha"*/}
+          {/*  data-sitekey="6LcGdBgbAAAAALYn25VCDfZpIEF5wmXhtqvpIkuz"*/}
+          {/*/>*/}
           <div className="sm:col-span-2 sm:flex sm:justify-end">
             <button
               type="submit"
