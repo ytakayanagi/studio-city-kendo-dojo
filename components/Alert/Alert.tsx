@@ -7,7 +7,7 @@ type AlertProps = {
   href?: string
 }
 
-const Alert = ({ children, className }: AlertProps) => {
+const Alert = ({ children, className }: AlertProps): JSX.Element => {
   return (
     <div className={'rounded-md bg-blue-50 p-4 ' + className}>
       <div className="flex">

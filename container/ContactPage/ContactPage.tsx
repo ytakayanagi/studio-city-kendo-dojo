@@ -1,7 +1,7 @@
 import ContactForm from './ContactForm/ContactForm'
 import { NextSeo } from 'next-seo'
 
-export default function ContactPage() {
+export default function ContactPage(): JSX.Element {
   return (
     <>
       <NextSeo title="Contact" />

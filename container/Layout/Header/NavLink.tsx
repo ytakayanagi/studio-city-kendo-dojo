@@ -11,7 +11,7 @@ export const NavLink = ({
   children,
   activeClassName = 'active',
   ...props
-}: NavLinkProps) => {
+}: NavLinkProps): JSX.Element => {
   const { asPath } = useRouter()
   const child = Children.only(children) as React.ReactElement
   const childClassName = child.props.className || ''

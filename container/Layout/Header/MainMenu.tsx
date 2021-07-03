@@ -5,11 +5,12 @@ type MainMenuProps = {
   navigation: NavigationType
 }
 
-const MainMenu = ({ navigation }: MainMenuProps) => {
+const MainMenu = ({ navigation }: MainMenuProps): JSX.Element => {
   return (
     <div className="hidden md:ml-6 md:flex md:space-x-8">
       {navigation.map((link) => (
         <NavLink
+          key={link.name}
           href={link.href}
           activeClassName="border-indigo-500 text-gray-900"
         >

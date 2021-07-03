@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <footer className="mt-24 bg-gray-800" aria-labelledby="footerHeading">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:py-8 lg:px-8">

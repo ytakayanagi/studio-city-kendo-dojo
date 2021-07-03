@@ -5,11 +5,12 @@ type MobileMenuProps = {
   navigation: NavigationType
 }
 
-const MobileMenu = ({ navigation }: MobileMenuProps) => {
+const MobileMenu = ({ navigation }: MobileMenuProps): JSX.Element => {
   return (
     <div className="pt-2 pb-3 space-y-1">
       {navigation.map((link) => (
         <NavLink
+          key={link.name}
           href={link.href}
           activeClassName="bg-blue-50 border-blue-500 text-blue-700"
         >

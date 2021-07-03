@@ -1,4 +1,4 @@
-const HeroCard = () => {
+const HeroCard = (): JSX.Element => {
   return (
     <div className="relative my-6">
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
@@ -20,8 +20,8 @@ const HeroCard = () => {
             <p className="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
               It is not just a sport wearing heavy armor and weilding bamboo
               sword, but a martial art that involves developing your mind, body
-              and spirit. Our dojo welcomes all ages and it's never too late to
-              start Kendo.
+              and spirit. Our dojo welcomes all ages and it&apos;s never too
+              late to start Kendo.
             </p>
           </div>
         </div>

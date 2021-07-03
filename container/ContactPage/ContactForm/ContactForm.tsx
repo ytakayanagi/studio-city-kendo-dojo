@@ -3,7 +3,7 @@ import { useForm } from '@formspree/react'
 import { CheckIcon } from '@heroicons/react/solid'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-const ContactForm = () => {
+const ContactForm = (): JSX.Element => {
   const [state, handleSubmit] = useForm('xrgrkqnp')
 
   if (state.succeeded) {

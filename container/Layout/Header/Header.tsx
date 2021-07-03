@@ -21,7 +21,7 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <Sticky top={0} innerZ={1001} activeClass="isHeaderSticky">
       <Disclosure as="nav" className="bg-white shadow">

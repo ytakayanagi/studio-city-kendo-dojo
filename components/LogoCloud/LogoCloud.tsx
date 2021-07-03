@@ -1,4 +1,4 @@
-const LogoCloud = () => {
+const LogoCloud = (): JSX.Element => {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-12">
