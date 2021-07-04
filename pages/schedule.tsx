@@ -33,7 +33,7 @@ export default function Schedule(): JSX.Element {
                       />
                     </div>
                     <div className="ml-3 text-base text-gray-500">
-                      <p>Fri 7:00pm to 8:15pm PST</p>
+                      <p>Fri 7:00pm to 8:30pm PST</p>
                     </div>
                   </div>
                 </div>
