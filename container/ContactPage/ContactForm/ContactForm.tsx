@@ -19,7 +19,9 @@ const ContactForm = (): JSX.Element => {
             </h3>
             <div className="mt-2">
               <p className="text-sm text-gray-500">
-                We will get to you as soon as possible.
+                We will get to you as soon as possible. If you do not receive
+                any response, please contact us again and make sure we have the
+                correct email address or phone number.
               </p>
             </div>
           </div>
@@ -70,6 +72,24 @@ const ContactForm = (): JSX.Element => {
             </div>
           </div>
           <div className="sm:col-span-2">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-900"
+            >
+              Phone number
+            </label>
+            <div className="mt-1">
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 border rounded-md"
+                required
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
             <div className="flex justify-between">
               <label
                 htmlFor="message"
@@ -93,10 +113,6 @@ const ContactForm = (): JSX.Element => {
             </div>
           </div>
           <ReCAPTCHA sitekey="6LcGdBgbAAAAALYn25VCDfZpIEF5wmXhtqvpIkuz" />
-          {/*<div*/}
-          {/*  className="g-recaptcha"*/}
-          {/*  data-sitekey="6LcGdBgbAAAAALYn25VCDfZpIEF5wmXhtqvpIkuz"*/}
-          {/*/>*/}
           <div className="sm:col-span-2 sm:flex sm:justify-end">
             <button
               type="submit"
