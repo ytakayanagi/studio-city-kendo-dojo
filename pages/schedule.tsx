@@ -3,7 +3,7 @@ import Calendar from "@ericz1803/react-google-calendar";
 
 const API_KEY = "AIzaSyDfRemdtA4BPRq2o0bf-PXWXMXZ5qBbvbc";
 
-let calendars = [
+const calendars = [
   { calendarId: "gob1db4pq3mb22o539vide2m8o@group.calendar.google.com" },
 ];
 
