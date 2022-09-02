@@ -111,8 +111,7 @@ export default function ContactPage(): JSX.Element {
               </svg>
             </div>
             <p className="text-base text-indigo-50 max-w-3xl">
-              Please contact us before visiting our dojo or joining our Zoom
-              practice.
+              Please contact us before visiting our dojo.
             </p>
             <h3 className="mt-6 text-lg font-medium text-white">
               Dojo Location
