@@ -1,8 +1,5 @@
 import { NextSeo } from 'next-seo'
-import '@ericz1803/react-google-calendar/index.css'
-
-// @ts-ignore
-import Calendar from "@ericz1803/react-google-calendar/index";
+import Calendar from "@ericz1803/react-google-calendar";
 
 const API_KEY = "AIzaSyDfRemdtA4BPRq2o0bf-PXWXMXZ5qBbvbc";
 
