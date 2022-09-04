@@ -3,18 +3,66 @@ import { NextSeo } from 'next-seo'
 
 const membershipFees = [
   {
-    age: '17yrs and under',
+    type: 'Child (17yrs and under)',
     tuition: 60,
-    registrationFee: 20,
-    sckoAnnualFee: 20,
-    auskfAnnualFee: 25,
+    initiationFee: 10,
+    sckoAnnualFee: 25,
+    auskfAnnualFee: 30,
   },
   {
-    age: '18yrs and over',
+    type: 'Adult (18yrs and over)',
     tuition: 75,
-    registrationFee: 20,
+    initiationFee: 10,
     sckoAnnualFee: 35,
-    auskfAnnualFee: 40,
+    auskfAnnualFee: 60,
+  },
+  {
+    type: 'Two Children same family',
+    tuition: 90,
+    initiationFee: 20,
+    sckoAnnualFee: 50,
+    auskfAnnualFee: 60,
+  },
+  {
+    type: 'Adult + Child same family',
+    tuition: 115,
+    initiationFee: 20,
+    sckoAnnualFee: 60,
+    auskfAnnualFee: 90,
+  },
+  {
+    type: 'Two Adults same family',
+    tuition: 115,
+    initiationFee: 20,
+    sckoAnnualFee: 70,
+    auskfAnnualFee: 120,
+  },
+]
+
+const faqs = [
+  {
+    id: 1,
+    question: "I want to join the practice. Is there any trial session available?",
+    answer:
+      "Yes, we do offer free trials for up to two practices.",
+  },
+  {
+    id: 2,
+    question: "I am interested in Kendo. Can I observe your practice before joining practice?",
+    answer:
+      "Yes, you can observe our practice at no charge. Please get in touch with us before coming to watch.",
+  },
+  {
+    id: 3,
+    question: "What is the age recommendation for Kendo?",
+    answer:
+      "There is no age restriction in Kendo. We recommend kids to start at any age as long as they can follow simple instructions from senseis. The youngest age we had in our dojo was five years old. For adults, you can start anytime. The oldest we had that started Kendo was over 50.",
+  },
+  {
+    id: 4,
+    question: "I have experience in Kendo. Can I join?",
+    answer:
+      "Of course! Please get in touch with us before coming to practice.",
   },
 ]
 
@@ -40,15 +88,15 @@ export default function Membership(): JSX.Element {
           </div>
         </div>
       </div>
-      <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
+      <h2 className="text-center text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
         Membership Fee
       </h2>
-      <p className="mt-4 text-base text-gray-500">
-        We do offer discounts to families joining. Please{' '}
+      <p className="text-center mt-4 text-base text-gray-500">
+        Please{' '}
         <Link href="/contact">
           <a>contact</a>
         </Link>{' '}
-        us for more details.
+        us for more details about the fees.
       </p>
       <div className="mt-2 flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -61,7 +109,7 @@ export default function Membership(): JSX.Element {
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Age
+
                     </th>
                     <th
                       scope="col"
@@ -73,7 +121,7 @@ export default function Membership(): JSX.Element {
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Registration Fee
+                      Initiation Fee
                     </th>
                     <th
                       scope="col"
@@ -92,11 +140,11 @@ export default function Membership(): JSX.Element {
                 <tbody>
                   {membershipFees.map((fee, feeIndex) => (
                     <tr
-                      key={fee.age}
+                      key={fee.type}
                       className={feeIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        ${fee.age}
+                        {fee.type}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         ${fee.tuition}{' '}
@@ -105,7 +153,7 @@ export default function Membership(): JSX.Element {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        ${fee.registrationFee}{' '}
+                        ${fee.initiationFee}{' '}
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
                           One time only
                         </span>
@@ -127,6 +175,19 @@ export default function Membership(): JSX.Element {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+        <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">Frequently asked questions</h2>
+          <div className="mt-12">
+            <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
+              {faqs.map((faq) => (
+                <div key={faq.id}>
+                  <dt className="text-lg font-medium leading-6 text-gray-900">{faq.question}</dt>
+                  <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>
