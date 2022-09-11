@@ -1,35 +1,44 @@
 import { NextSeo } from 'next-seo'
+import Team from '../components/Team/Team'
 
-const people = [
+const founders = [
+  {
+    name: 'Michihiro Nakashima',
+    rank: '7-dan Kyoshi',
+    imageUrl: '/avatar.svg',
+  },
+  {
+    name: 'Shigeshi Takei',
+    rank: '',
+    imageUrl: '/avatar.svg',
+  },
+]
+
+const instructors = [
   {
     name: 'Carolyn Yatomi (Head Instructor)',
     rank: '5-dan',
-    imageUrl:
-      '/avatar.svg',
+    imageUrl: '/avatar.svg',
   },
   {
     name: 'Hide Mizutani',
     rank: '5-dan',
-    imageUrl:
-      '/avatar.svg',
+    imageUrl: '/avatar.svg',
   },
   {
     name: 'Yujin Takayanagi',
     rank: '4-dan',
-    imageUrl:
-      '/avatar.svg',
+    imageUrl: '/avatar.svg',
   },
   {
     name: 'Salyvan',
     rank: '3-dan',
-    imageUrl:
-      '/avatar.svg',
+    imageUrl: '/avatar.svg',
   },
   {
     name: 'Ray Yada',
     rank: '3-dan',
-    imageUrl:
-      '/avatar.svg',
+    imageUrl: '/avatar.svg',
   },
 ]
 
@@ -120,9 +129,9 @@ export default function About(): JSX.Element {
                       <p className="relative">
                         Studio City Kendo Dojo is a recognized member of both
                         the Southern California Kendo Organization (SCKO) the
-                        All United States Kendo Federation (AUSKF), and the
-                        International Kendo Federation (FIK). All grades and/or
-                        ranks you achieve will be recognized by other dojos or
+                        All United States Kendo Federation (AUSKF) and the
+                        International Kendo Federation (FIK). All grades and
+                        ranks you achieve are recognized by other dojos or
                         organizations at both National and International levels.
                       </p>
                     </div>
@@ -141,47 +150,25 @@ export default function About(): JSX.Element {
               <div className="mt-6 text-gray-500 space-y-6">
                 <p className="text-lg">
                   Bridges Academy, formerly Osaka Sangyo University of Los
-                  Angeles, is home to Studio City Kendo Dojo which is also known
-                  as “OSULA”. Nakashima Sensei, 7th-dan, and Takei Sensei,
-                  5th-dan are OSULA founding Sensei. Along with the other dojo
-                  Sensei and instructors, they work together to provide not just
-                  a solid understanding of kendo basics and the skills necessary
-                  for rank advancement, National and International competition
-                  but to help individuals develop a strong mind and body, and
+                  Angeles is home to Studio City Kendo Dojo, which is also known
+                  as “OSULA.” Nakashima Sensei and Takei Sensei are OSULA
+                  founding Sensei. Along with the other dojo Sensei and
+                  instructors work together to provide not just a solid
+                  understanding of kendo basics and the skills necessary for
+                  rank advancement, National and International competition but
+                  to help individuals develop a strong mind and body, and
                   respect for others.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
-          <div className="space-y-12">
-            <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Instructors</h2>
-              <p className="text-xl text-gray-500">
-                Our Senseis and Assistants
-              </p>
-            </div>
-            <ul
-              role="list"
-              className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3"
-            >
-              {people.map((person) => (
-                <li key={person.name}>
-                  <div className="space-y-6">
-                    <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageUrl} alt="" />
-                    <div className="space-y-2">
-                      <div className="space-y-1 text-lg font-medium leading-6">
-                        <h3>{person.name}</h3>
-                        <p className="text-blue-600">{person.rank}</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <Team title="Founders" subtitle="Our Pioneers" people={founders} />
+        <Team
+          title="Instructors"
+          subtitle="Our Senseis and Assistants"
+          people={instructors}
+        />
       </div>
     </>
   )
