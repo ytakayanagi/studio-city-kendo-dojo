@@ -7,7 +7,11 @@ const LogoCloud = (): JSX.Element => {
         </p>
         <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
           <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a href="https://www.socalkendo.org/" target="_blank">
+            <a
+              href="https://www.socalkendo.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 className="max-h-12"
                 src="/logo-scko.png"
@@ -16,7 +20,7 @@ const LogoCloud = (): JSX.Element => {
             </a>
           </div>
           <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a href="https://www.auskf.org/" target="_blank">
+            <a href="https://www.auskf.org/" target="_blank" rel="noreferrer">
               <img
                 className="max-h-12"
                 src="/logo-auskf.png"
@@ -25,7 +29,11 @@ const LogoCloud = (): JSX.Element => {
             </a>
           </div>
           <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a href="https://www.kendo-fik.org/" target="_blank">
+            <a
+              href="https://www.kendo-fik.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 className="max-h-12"
                 src="/logo-fik.png"
