@@ -48,7 +48,9 @@ const Header = (): JSX.Element => {
                   <div className="flex-shrink-0 flex items-center">
                     <Link href="/">
                       <a>
-                        <h1 className="w-auto text-white text-lg font-semibold">Studio City Kendo Dojo</h1>
+                        <h1 className="w-auto text-white text-lg font-semibold">
+                          Studio City Kendo Dojo
+                        </h1>
                       </a>
                     </Link>
                   </div>
@@ -60,9 +62,9 @@ const Header = (): JSX.Element => {
                       <a>
                         <button
                           type="button"
-                          className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-800 shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="invisible md:visible inline-flex items-center rounded-md bg-blue-700 px-5 py-3 text-sm leading-4 text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
-                          <span>Try Kendo</span>
+                          Try Kendo
                         </button>
                       </a>
                     </Link>

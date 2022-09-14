@@ -42,27 +42,45 @@ const membershipFees = [
 const faqs = [
   {
     id: 1,
-    question: "I want to join the practice. Is there any trial session available?",
-    answer:
-      "Yes, we do offer free trials for up to two practices.",
+    question:
+      'I want to join the practice. Is there any trial session available?',
+    answer: 'Yes, we do offer free trials for up to two practices.',
   },
   {
     id: 2,
-    question: "I am interested in Kendo. Can I observe your practice before joining practice?",
+    question:
+      'I am interested in Kendo. Can I observe your practice before joining practice?',
     answer:
-      "Yes, you can observe our practice at no charge. Please get in touch with us before coming to watch.",
+      'Yes, you can observe our practice at no charge. Please get in touch with us before coming to watch.',
   },
   {
     id: 3,
-    question: "What is the age recommendation for Kendo?",
+    question: 'What is the age recommendation for Kendo?',
     answer:
-      "There is no age restriction in Kendo. We recommend kids to start at any age as long as they can follow simple instructions from senseis. The youngest age we had in our dojo was five years old. For adults, you can start anytime. The oldest we had that started Kendo was over 50.",
+      'There is no age restriction in Kendo. Most people outside of Japan start as adults. In our dojo, the oldest we had started in their 50s, and the youngest was 5. We recommend that kids begin when they have a good attention span.',
   },
   {
     id: 4,
-    question: "I have experience in Kendo. Can I join?",
+    question: 'I have experience in Kendo. Can I join?',
+    answer: 'Of course! Please get in touch with us before coming to practice.',
+  },
+  {
+    id: 5,
+    question: 'Where can I buy gear?',
     answer:
-      "Of course! Please get in touch with us before coming to practice.",
+      'Please consult us before buying any gear unless you are experienced in Kendo.',
+  },
+  {
+    id: 6,
+    question: 'What do you teach beginners?',
+    answer:
+      'We start by teaching basic etiquette. You will learn a few techniques, including footwork, postures, and how to hold the shinai. In addition, you may also start learning various kinds of practice swings called suburi.',
+  },
+  {
+    id: 7,
+    question: 'How long do I practice without armor?',
+    answer:
+      'It depends on your dedication and ability. On average it can take anywhere from 3 months to a year.',
   },
 ]
 
@@ -108,9 +126,7 @@ export default function Membership(): JSX.Element {
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-
-                    </th>
+                    ></th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -178,12 +194,16 @@ export default function Membership(): JSX.Element {
           </div>
         </div>
         <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">Frequently asked questions</h2>
+          <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
+            Frequently asked questions
+          </h2>
           <div className="mt-12">
             <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
               {faqs.map((faq) => (
                 <div key={faq.id}>
-                  <dt className="text-lg font-medium leading-6 text-gray-900">{faq.question}</dt>
+                  <dt className="text-lg font-medium leading-6 text-gray-900">
+                    {faq.question}
+                  </dt>
                   <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
                 </div>
               ))}

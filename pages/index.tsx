@@ -18,9 +18,7 @@ export default function Home(): JSX.Element {
             </p>
             <p className="mt-4 text-gray-500">
               Studio City Kendo Dojo aims to have students enjoy kendo practice
-              and continue their kendo journey. We have students who have
-              competed in the All United States Kendo Championships, become
-              president of SCKO, and become Senseis in our dojo.
+              and continue their kendo journey.
             </p>
           </div>
         </div>
