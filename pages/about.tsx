@@ -31,12 +31,12 @@ const instructors = [
     imageUrl: '/avatar.svg',
   },
   {
-    name: 'Salyvan',
-    rank: '3-dan',
+    name: 'Ray Yada',
+    rank: '4-dan',
     imageUrl: '/avatar.svg',
   },
   {
-    name: 'Ray Yada',
+    name: 'Salyvan',
     rank: '3-dan',
     imageUrl: '/avatar.svg',
   },
