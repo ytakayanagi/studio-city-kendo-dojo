@@ -26,11 +26,6 @@ const instructors = [
     imageUrl: '/avatar.svg',
   },
   {
-    name: 'Yujin Takayanagi',
-    rank: '4-dan',
-    imageUrl: '/avatar.svg',
-  },
-  {
     name: 'Ray Yada',
     rank: '4-dan',
     imageUrl: '/avatar.svg',

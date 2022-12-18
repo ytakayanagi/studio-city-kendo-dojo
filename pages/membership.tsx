@@ -110,11 +110,8 @@ export default function Membership(): JSX.Element {
         Membership Fee
       </h2>
       <p className="text-center mt-4 text-base text-gray-500">
-        Please{' '}
-        <Link href="/contact">
-          <a>contact</a>
-        </Link>{' '}
-        us for more details about the fees.
+        Please <Link href="/contact">contact</Link> us for more details about
+        the fees.
       </p>
       <div className="mt-2 flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

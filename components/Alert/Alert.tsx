@@ -1,5 +1,5 @@
 import React from 'react'
-import { InformationCircleIcon } from '@heroicons/react/solid'
+import { InformationCircleIcon } from '@heroicons/react/24/solid'
 
 type AlertProps = {
   children: React.ReactNode
