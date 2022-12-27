@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from '@formspree/react'
-import { CheckIcon } from '@heroicons/react/solid'
+import { CheckIcon } from '@heroicons/react/24/solid'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 const ContactForm = (): JSX.Element => {
