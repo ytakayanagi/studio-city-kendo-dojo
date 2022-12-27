@@ -24,7 +24,6 @@ const navigation = [
 
 const Header = (): JSX.Element => {
   return (
-    // @ts-ignore
     <Sticky top={0} innerZ={1001} activeClass="isHeaderSticky">
       <Disclosure as="nav" className="bg-black shadow">
         {({ open }) => (
