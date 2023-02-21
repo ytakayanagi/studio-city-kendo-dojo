@@ -5,7 +5,7 @@ import MobileMenu from './MobileMenu'
 import MainMenu from './MainMenu'
 
 import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline/'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 type NavigationItemType = {
   name: string

@@ -34,6 +34,11 @@ const ContactForm = (): JSX.Element => {
     <>
       <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
         <h3 className="text-lg font-medium text-gray-900">Send us a message</h3>
+        <p>
+          Please fill out all your information below. If you are requesting
+          information for your child, please include your child's age in the
+          message box so we can better assist.
+        </p>
         <form onSubmit={handleSubmit} className="mt-6 grid gap-y-6">
           <div className="sm:col-span-2">
             <label
