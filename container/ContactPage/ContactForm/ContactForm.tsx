@@ -1,4 +1,5 @@
-import React from 'react'
+import * as React from 'react'
+
 import { useForm } from '@formspree/react'
 import { CheckIcon } from '@heroicons/react/24/solid'
 import ReCAPTCHA from 'react-google-recaptcha'
