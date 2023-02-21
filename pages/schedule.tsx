@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo'
-import Calendar from "@ericz1803/react-google-calendar";
+import Calendar from '@ericz1803/react-google-calendar'
 
-const API_KEY = "AIzaSyDfRemdtA4BPRq2o0bf-PXWXMXZ5qBbvbc";
+const API_KEY = 'AIzaSyBYwdS47JgU1Pbns2Zec0E_JYbEiedWnNo'
 
 const calendars = [
-  { calendarId: "gob1db4pq3mb22o539vide2m8o@group.calendar.google.com" },
-];
+  { calendarId: 'gob1db4pq3mb22o539vide2m8o@group.calendar.google.com' },
+]
 
 export default function Schedule(): JSX.Element {
   return (
@@ -25,10 +25,10 @@ export default function Schedule(): JSX.Element {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-4">
-              <Calendar apiKey={API_KEY} calendars={calendars} />
+            <Calendar apiKey={API_KEY} calendars={calendars} />
           </div>
         </div>
       </div>
-   </>
+    </>
   )
 }
