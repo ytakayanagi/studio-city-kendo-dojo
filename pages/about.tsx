@@ -26,13 +26,13 @@ const instructors = [
     imageUrl: '/avatar.svg',
   },
   {
-    name: 'Ray Yada',
-    rank: '4-dan',
+    name: 'David Watanabe',
+    rank: '5-dan',
     imageUrl: '/avatar.svg',
   },
   {
-    name: 'Salyvan',
-    rank: '3-dan',
+    name: 'Ray Yada',
+    rank: '4-dan',
     imageUrl: '/avatar.svg',
   },
 ]
