@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo'
 import Calendar from '@ericz1803/react-google-calendar'
+import { useEffect, useState } from 'react'
 
 const API_KEY = 'AIzaSyBYwdS47JgU1Pbns2Zec0E_JYbEiedWnNo'
 
@@ -8,6 +9,13 @@ const calendars = [
 ]
 
 export default function Schedule(): JSX.Element {
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
+
+  if (!loaded) return <div>loading...</div>
   return (
     <>
       <NextSeo title="Schedule" />
@@ -25,7 +33,7 @@ export default function Schedule(): JSX.Element {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-4">
-            <Calendar apiKey={API_KEY} calendars={calendars} />
+            {loaded && <Calendar apiKey={API_KEY} calendars={calendars} />}
           </div>
         </div>
       </div>

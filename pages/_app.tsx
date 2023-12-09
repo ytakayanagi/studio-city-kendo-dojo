@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 
 import 'tailwindcss/tailwind.css'
-import'@ericz1803/react-google-calendar/index.css'
 
 import SEO from '../next-seo.config'
 
