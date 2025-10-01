@@ -17,21 +17,26 @@ const founders = [
 const instructors = [
   {
     name: 'Carolyn Yatomi (Head Instructor)',
-    rank: '5-dan',
+    rank: '6-dan',
     imageUrl: '/avatar.svg',
   },
   {
     name: 'Hide Mizutani',
-    rank: '5-dan',
+    rank: '6-dan',
     imageUrl: '/avatar.svg',
   },
   {
     name: 'David Watanabe',
-    rank: '5-dan',
+    rank: '6-dan',
     imageUrl: '/avatar.svg',
   },
   {
     name: 'Ray Yada',
+    rank: '4-dan',
+    imageUrl: '/avatar.svg',
+  },
+  {
+    name: 'Albert Choi',
     rank: '4-dan',
     imageUrl: '/avatar.svg',
   },
