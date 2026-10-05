@@ -1,48 +1,25 @@
+import { affiliations } from '../../lib/site'
+
 const LogoCloud = (): JSX.Element => {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <p className="text-center text-lg font-semibold text-gray-600">
-          Proud member of the kendo community
-        </p>
-        <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
-          <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a
-              href="https://www.socalkendo.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className="max-h-12"
-                src="/logo-scko.png"
-                alt="Southern California Kendo Organization"
-              />
-            </a>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {affiliations.map((org) => (
+        <a
+          key={org.shortName}
+          href={org.href}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-5 transition-shadow hover:shadow-md"
+        >
+          <img className="h-12 w-12 object-contain" src={org.logo} alt="" />
+          <div>
+            <p className="text-sm font-semibold text-gray-900">
+              {org.shortName}
+            </p>
+            <p className="text-sm text-gray-500">{org.name}</p>
           </div>
-          <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a href="https://www.auskf.org/" target="_blank" rel="noreferrer">
-              <img
-                className="max-h-12"
-                src="/logo-auskf.png"
-                alt="All United States Kendo Federation"
-              />
-            </a>
-          </div>
-          <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-            <a
-              href="https://www.kendo-fik.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className="max-h-12"
-                src="/logo-fik.png"
-                alt="International Kendo Federation"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
+        </a>
+      ))}
     </div>
   )
 }

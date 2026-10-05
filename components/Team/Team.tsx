@@ -1,7 +1,7 @@
 type PersonType = {
   name: string
   rank: string
-  imageUrl: string
+  role?: string
 }
 
 type TeamProps = {
@@ -10,43 +10,57 @@ type TeamProps = {
   people: Array<PersonType>
 }
 
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+
 export default function Team({
   title,
   subtitle,
   people,
 }: TeamProps): JSX.Element {
   return (
-    <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
-      <div className="space-y-12">
-        <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            {title}
-          </h2>
-          <p className="text-xl text-gray-500">{subtitle}</p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3"
-        >
-          {people.map((person) => (
-            <li key={person.name}>
-              <div className="space-y-6">
-                <img
-                  className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56"
-                  src={person.imageUrl}
-                  alt=""
-                />
-                <div className="space-y-2">
-                  <div className="space-y-1 text-lg font-medium leading-6">
-                    <h3>{person.name}</h3>
-                    <p className="text-blue-600">{person.rank}</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+    <div>
+      <div className="max-w-2xl">
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          {title}
+        </h2>
+        <p className="mt-2 text-lg text-gray-600">{subtitle}</p>
       </div>
+      <ul role="list" className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {people.map((person) => (
+          <li
+            key={person.name}
+            className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-5"
+          >
+            <span
+              aria-hidden="true"
+              className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-black text-lg font-semibold text-white"
+            >
+              {initials(person.name)}
+            </span>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900">
+                {person.name}
+              </h3>
+              <div className="mt-1 flex flex-wrap gap-2">
+                {person.rank && (
+                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+                    {person.rank}
+                  </span>
+                )}
+                {person.role && (
+                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
+                    {person.role}
+                  </span>
+                )}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

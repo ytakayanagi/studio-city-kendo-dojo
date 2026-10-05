@@ -34,11 +34,13 @@ const ContactForm = (): JSX.Element => {
   return (
     <>
       <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-        <h3 className="text-lg font-medium text-gray-900">Send us a message</h3>
-        <p>
+        <h2 className="text-xl font-semibold text-gray-900">
+          Send us a message
+        </h2>
+        <p className="mt-2 text-base text-gray-600">
           Please fill out all your information below. If you are requesting
-          information for your child, please include your child's age in the
-          message box so we can better assist.
+          information for your child, please include your child&apos;s age in
+          the message box so we can better assist.
         </p>
         <form onSubmit={handleSubmit} className="mt-6 grid gap-y-6">
           <div className="sm:col-span-2">
@@ -54,7 +56,7 @@ const ContactForm = (): JSX.Element => {
                 name="name"
                 id="name"
                 autoComplete="given-name"
-                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 border rounded-md"
+                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 border-gray-300 border rounded-md"
                 required
               />
             </div>
@@ -72,7 +74,7 @@ const ContactForm = (): JSX.Element => {
                 name="email"
                 type="email"
                 autoComplete="email"
-                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 border rounded-md"
+                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 border-gray-300 border rounded-md"
                 required
               />
             </div>
@@ -90,7 +92,7 @@ const ContactForm = (): JSX.Element => {
                 name="phone"
                 type="tel"
                 autoComplete="tel"
-                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 border rounded-md"
+                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 border-gray-300 border rounded-md"
                 required
               />
             </div>
@@ -112,7 +114,7 @@ const ContactForm = (): JSX.Element => {
                 id="message"
                 name="message"
                 rows={4}
-                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 border border-gray-300 rounded-md"
                 aria-describedby="message-max"
                 required
               />
@@ -122,7 +124,7 @@ const ContactForm = (): JSX.Element => {
           <div className="sm:col-span-2 sm:flex sm:justify-end">
             <button
               type="submit"
-              className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
+              className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
               disabled={state.submitting}
             >
               Submit
