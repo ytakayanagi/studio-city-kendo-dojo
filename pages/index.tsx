@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 import {
   ArrowRightIcon,
   ChatBubbleLeftRightIcon,
+  ClockIcon,
   EyeIcon,
   MapPinIcon,
   SparklesIcon,
@@ -120,7 +121,7 @@ export default function Home(): JSX.Element {
               href={address.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white"
+              className="mt-8 flex w-fit items-center gap-2 text-sm text-gray-300 hover:text-white"
             >
               <MapPinIcon
                 className="h-5 w-5 text-blue-500"
@@ -128,6 +129,10 @@ export default function Home(): JSX.Element {
               />
               {address.street}, {address.city}
             </a>
+            <p className="mt-2 flex items-center gap-2 text-sm text-gray-300">
+              <ClockIcon className="h-5 w-5 text-blue-500" aria-hidden="true" />
+              Every Friday, 7:00pm – 9:00pm
+            </p>
           </div>
         </div>
       </section>

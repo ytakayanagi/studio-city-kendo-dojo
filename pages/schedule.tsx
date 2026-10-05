@@ -1,19 +1,10 @@
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import {
-  ChatBubbleLeftRightIcon,
-  EyeIcon,
-  MapPinIcon,
-} from '@heroicons/react/24/outline'
+import { ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 import CallToAction from '../components/CallToAction/CallToAction'
 import PageHeader from '../components/PageHeader/PageHeader'
-import { address } from '../lib/site'
-
-const calendarSrc =
-  'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTitle=0&showTz=0&showCalendars=0&showTabs=0&src=c3R1ZGlvY2l0eWtlbmRvQGdtYWlsLmNvbQ&color=%23039be5'
-const agendaSrc =
-  'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTitle=0&showTz=0&showCalendars=0&showTabs=0&mode=AGENDA&src=c3R1ZGlvY2l0eWtlbmRvQGdtYWlsLmNvbQ&color=%23039be5'
+import { address, practices } from '../lib/site'
 
 export default function Schedule(): JSX.Element {
   return (
@@ -21,103 +12,95 @@ export default function Schedule(): JSX.Element {
       <NextSeo title="Schedule" />
       <PageHeader
         eyebrow="Schedule"
-        title="Practice and Events Schedule"
+        title="We practice every Friday"
         kanji="稽古"
       >
         <p>
-          Practices, exams and events are all on our calendar below. Planning
-          your first visit? Let us know you are coming.
+          Practice is every Friday evening. First time? Please contact us before
+          visiting our dojo so we know to expect you.
         </p>
       </PageHeader>
 
-      <section className="bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="flex gap-4 rounded-xl border border-gray-200 p-5">
-              <MapPinIcon
-                className="h-6 w-6 flex-shrink-0 text-blue-700"
-                aria-hidden="true"
-              />
-              <div>
-                <p className="font-semibold text-gray-900">Where</p>
-                <p className="mt-1 text-sm text-gray-600">
-                  {address.venue}, {address.street}, {address.city}
-                </p>
-                <a
-                  href={address.mapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-block text-sm font-semibold text-blue-700 hover:text-blue-600"
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+              Weekly practice
+            </h2>
+            <ul
+              role="list"
+              className="mt-6 divide-y divide-gray-200 rounded-2xl border border-gray-200"
+            >
+              {practices.map((practice) => (
+                <li
+                  key={practice.name}
+                  className="flex flex-col gap-2 p-6 sm:flex-row sm:items-center sm:gap-8"
                 >
-                  Get directions &rarr;
-                </a>
-              </div>
-            </div>
-            <div className="flex gap-4 rounded-xl border border-gray-200 p-5">
-              <ChatBubbleLeftRightIcon
-                className="h-6 w-6 flex-shrink-0 text-blue-700"
-                aria-hidden="true"
-              />
-              <div>
-                <p className="font-semibold text-gray-900">First time?</p>
-                <p className="mt-1 text-sm text-gray-600">
-                  Please contact us before visiting our dojo.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-2 inline-block text-sm font-semibold text-blue-700 hover:text-blue-600"
-                >
-                  Send a message &rarr;
-                </Link>
-              </div>
-            </div>
-            <div className="flex gap-4 rounded-xl border border-gray-200 p-5">
-              <EyeIcon
-                className="h-6 w-6 flex-shrink-0 text-blue-700"
-                aria-hidden="true"
-              />
-              <div>
-                <p className="font-semibold text-gray-900">Free to watch</p>
-                <p className="mt-1 text-sm text-gray-600">
-                  Observe a practice at no charge, or join up to two practices
-                  as a free trial.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-            {/* Desktop Calendar */}
-            <div className="hidden md:block">
-              <div className="relative w-full" style={{ paddingBottom: '70%' }}>
-                <iframe
-                  title="Studio City Kendo Dojo calendar"
-                  src={calendarSrc}
-                  className="absolute left-0 top-0 h-full w-full"
-                  style={{ border: 0 }}
-                  frameBorder="0"
-                  scrolling="no"
-                />
-              </div>
-            </div>
-
-            {/* Mobile Calendar - Agenda View */}
-            <div className="md:hidden">
-              <div
-                className="relative w-full"
-                style={{ paddingBottom: '100%' }}
+                  <div className="sm:w-64 sm:flex-shrink-0">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                      {practice.day}
+                    </p>
+                    <p className="mt-1 flex items-center gap-2 whitespace-nowrap text-xl font-bold text-gray-900">
+                      <ClockIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                      {practice.time}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-gray-900">
+                      {practice.name}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-gray-500">
+              Planning a first visit?{' '}
+              <Link
+                href="/contact"
+                className="font-semibold text-blue-700 underline hover:text-blue-600"
               >
-                <iframe
-                  title="Studio City Kendo Dojo calendar"
-                  src={agendaSrc}
-                  className="absolute left-0 top-0 h-full w-full"
-                  style={{ border: 0 }}
-                  frameBorder="0"
-                  scrolling="yes"
-                />
-              </div>
-            </div>
+                Send us a message
+              </Link>{' '}
+              to confirm the date.
+            </p>
           </div>
+
+          <aside className="h-fit rounded-2xl bg-gray-50 p-6">
+            <h2 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+              <MapPinIcon
+                className="h-5 w-5 text-blue-700"
+                aria-hidden="true"
+              />
+              Where
+            </h2>
+            <address className="mt-3 text-base not-italic leading-7 text-gray-600">
+              {address.venue}
+              <br />
+              {address.street}
+              <br />
+              {address.city}
+            </address>
+            <a
+              href={address.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-sm font-semibold text-blue-700 hover:text-blue-600"
+            >
+              Get directions &rarr;
+            </a>
+            <div className="mt-6 border-t border-gray-200 pt-6">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Free to watch
+              </h2>
+              <p className="mt-2 text-base text-gray-600">
+                Observe a practice at no charge, or join up to two practices as
+                a free trial.
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 

@@ -28,6 +28,11 @@ const Footer = (): JSX.Element => {
               <br />
               {address.city}
             </address>
+            <p className="mt-3 text-sm leading-6 text-gray-400">
+              Practice every Friday
+              <br />
+              7:00pm – 10:00pm
+            </p>
             <a
               href={address.mapsUrl}
               target="_blank"

@@ -36,3 +36,16 @@ export const affiliations = [
     logo: '/logo-fik.png',
   },
 ]
+
+export const practices = [
+  {
+    day: 'Friday',
+    time: '7:00pm – 9:00pm',
+    name: 'Practice',
+  },
+  {
+    day: 'Friday',
+    time: '9:00pm – 10:00pm',
+    name: 'Advanced practice',
+  },
+]
