@@ -1,129 +1,104 @@
-import ContactForm from './ContactForm/ContactForm'
-import { NextSeo } from 'next-seo'
+import Seo from '../../components/Seo/Seo'
+import { CheckCircleIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
-export default function ContactPage(): JSX.Element {
+import ContactForm from './ContactForm/ContactForm'
+import PageHeader from '../../components/PageHeader/PageHeader'
+import { address, practices, saturday } from '../../lib/site'
+
+const expectations = [
+  'Watch a practice for free',
+  'Try up to two practices free',
+  'No need to buy gear first',
+  'Kids and adults welcome',
+]
+
+export default function ContactPage(): React.JSX.Element {
   return (
     <>
-      <NextSeo title="Contact" />
-      <div className="mt-6 relative bg-white shadow-xl">
-        <h2 className="sr-only">Contact us</h2>
+      <Seo title="Contact" />
+      <PageHeader eyebrow="Contact" title="Come try kendo with us" kanji="礼">
+        <p>
+          Questions about kendo, a free trial practice, or signing up your
+          child? Send us a message and we will get back to you.
+        </p>
+      </PageHeader>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          {/* Contact information */}
-          <div className="relative overflow-hidden py-10 px-6 bg-blue-700 sm:px-10 xl:p-12">
-            <div
-              className="absolute inset-0 pointer-events-none sm:hidden"
-              aria-hidden="true"
-            >
-              <svg
-                className="absolute inset-0 w-full h-full"
-                width={343}
-                height={388}
-                viewBox="0 0 343 388"
-                fill="none"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z"
-                  fill="url(#linear1)"
-                  fillOpacity=".1"
+      <section className="bg-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid overflow-hidden rounded-[2.5rem] bg-white shadow-2xl shadow-black/10 ring-1 ring-gray-200 lg:grid-cols-3">
+            {/* Contact information */}
+            <div className="relative isolate overflow-hidden bg-blue-700 px-6 py-10 sm:px-10 xl:p-12">
+              <div
+                aria-hidden="true"
+                className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-blue-500/50 blur-3xl"
+              />
+              <h2 className="font-display text-3xl font-extrabold text-white">
+                Before you visit
+              </h2>
+              <p className="mt-3 text-base text-blue-100">
+                Please contact us before visiting our dojo.
+              </p>
+              <ul role="list" className="mt-6 space-y-3">
+                {expectations.map((item) => (
+                  <li key={item} className="flex gap-3 text-base text-white">
+                    <CheckCircleIcon
+                      className="h-6 w-6 shrink-0 text-blue-200"
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-10 font-display text-xl font-bold text-white">
+                Dojo Location
+              </h3>
+              <address className="mt-2 flex gap-3 text-base not-italic text-blue-100">
+                <MapPinIcon
+                  className="h-6 w-6 shrink-0 text-blue-200"
+                  aria-hidden="true"
                 />
-                <defs>
-                  <linearGradient
-                    id="linear1"
-                    x1="254.553"
-                    y1="107.554"
-                    x2="961.66"
-                    y2="814.66"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div
-              className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden"
-              aria-hidden="true"
-            >
-              <svg
-                className="absolute inset-0 w-full h-full"
-                width={359}
-                height={339}
-                viewBox="0 0 359 339"
-                fill="none"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  {address.venue}
+                  <br />
+                  {address.street}
+                  <br />
+                  {address.city}
+                </span>
+              </address>
+              <p className="mt-3 text-sm text-blue-100">{address.entryNote}</p>
+              <a
+                href={address.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-blue-700 hover:bg-blue-50"
               >
-                <path
-                  d="M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z"
-                  fill="url(#linear2)"
-                  fillOpacity=".1"
-                />
-                <defs>
-                  <linearGradient
-                    id="linear2"
-                    x1="192.553"
-                    y1="28.553"
-                    x2="899.66"
-                    y2="735.66"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div
-              className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block"
-              aria-hidden="true"
-            >
-              <svg
-                className="absolute inset-0 w-full h-full"
-                width={160}
-                height={678}
-                viewBox="0 0 160 678"
-                fill="none"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
+                Get directions &rarr;
+              </a>
+              <h3 className="mt-10 font-display text-xl font-bold text-white">
+                Practice
+              </h3>
+              <ul
+                role="list"
+                className="mt-2 space-y-1 text-base text-blue-100"
               >
-                <path
-                  d="M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z"
-                  fill="url(#linear3)"
-                  fillOpacity=".1"
-                />
-                <defs>
-                  <linearGradient
-                    id="linear3"
-                    x1="192.553"
-                    y1="325.553"
-                    x2="899.66"
-                    y2="1032.66"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-              </svg>
+                {practices.map((practice) => (
+                  <li key={practice.name}>
+                    {practice.name}: Fri {practice.time}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-base text-blue-100">
+                <span className="font-semibold text-white">Saturdays:</span>{' '}
+                {saturday.frequency.toLowerCase()} at the {saturday.venue},{' '}
+                {saturday.street}, {saturday.city}. {saturday.note}
+              </p>
             </div>
-            <p className="text-base text-indigo-50 max-w-3xl">
-              Please contact us before visiting our dojo.
-            </p>
-            <h3 className="mt-6 text-lg font-medium text-white">
-              Dojo Location
-            </h3>
-            <p className="text-base text-indigo-50 max-w-3xl">
-              3921 Laurel Canyon Blvd
-              <br /> Studio City, CA 91604
-            </p>
+
+            <ContactForm />
           </div>
-          <ContactForm />
         </div>
-      </div>
+      </section>
     </>
   )
 }

@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -6,7 +8,15 @@ module.exports = {
   ],
   media: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Inter Variable"', ...defaultTheme.fontFamily.sans],
+        display: [
+          '"Bricolage Grotesque Variable"',
+          ...defaultTheme.fontFamily.sans,
+        ],
+      },
+    },
   },
   variants: {
     extend: {},
