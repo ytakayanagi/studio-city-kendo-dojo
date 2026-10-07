@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
+import Seo from '../components/Seo/Seo'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 import CallToAction from '../components/CallToAction/CallToAction'
+import Eyebrow from '../components/Eyebrow/Eyebrow'
 import PageHeader from '../components/PageHeader/PageHeader'
 import { cx } from '../lib/cx'
 
@@ -108,10 +109,10 @@ const joinSteps = [
   },
 ]
 
-export default function Membership(): JSX.Element {
+export default function Membership(): React.JSX.Element {
   return (
     <>
-      <NextSeo title="Membership" />
+      <Seo title="Membership" />
       <PageHeader
         eyebrow="Membership"
         title="How to join our dojo"
@@ -126,27 +127,28 @@ export default function Membership(): JSX.Element {
       </PageHeader>
 
       {/* Steps */}
-      <section className="border-b border-gray-200 bg-white">
-        <ol className="mx-auto grid max-w-7xl gap-px bg-gray-200 md:grid-cols-3">
+      <section className="bg-black">
+        <ol className="mx-auto grid max-w-7xl gap-px bg-white/10 md:grid-cols-3">
           {joinSteps.map((step, index) => (
-            <li key={step.name} className="bg-white px-4 py-10 sm:px-8">
-              <span className="text-sm font-semibold text-blue-700">
-                Step {index + 1}
+            <li key={step.name} className="bg-black px-6 py-12 sm:px-10">
+              <span className="font-display text-5xl font-extrabold text-blue-500">
+                0{index + 1}
               </span>
-              <h2 className="mt-2 text-xl font-semibold text-gray-900">
+              <h2 className="mt-4 font-display text-2xl font-bold text-white">
                 {step.name}
               </h2>
-              <p className="mt-2 text-base text-gray-600">{step.description}</p>
+              <p className="mt-2 text-base text-gray-400">{step.description}</p>
             </li>
           ))}
         </ol>
       </section>
 
       {/* Fees */}
-      <section className="bg-gray-50 py-20 sm:py-28">
+      <section className="bg-gray-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <Eyebrow>Fees</Eyebrow>
+            <h2 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
               Membership Fee
             </h2>
             <p className="mt-4 text-lg text-gray-600">
@@ -167,13 +169,13 @@ export default function Membership(): JSX.Element {
             {membershipFees.map((fee) => (
               <li
                 key={fee.type}
-                className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
+                className="group flex flex-col rounded-3xl bg-white p-8 shadow-xs ring-1 ring-inset ring-gray-200 transition hover:-translate-y-1 hover:shadow-xl hover:ring-blue-700"
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="font-display text-xl font-bold text-gray-900">
                   {fee.type}
                 </h3>
                 <p className="mt-4 flex items-baseline gap-x-2">
-                  <span className="text-4xl font-bold tracking-tight text-gray-900">
+                  <span className="font-display text-6xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-700">
                     ${fee.tuition}
                   </span>
                   <span className="text-sm font-semibold text-gray-500">
@@ -216,14 +218,19 @@ export default function Membership(): JSX.Element {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+          <Eyebrow>FAQ</Eyebrow>
+          <h2 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-gray-900">
             Frequently asked questions
           </h2>
-          <dl className="mt-10 divide-y divide-gray-200 border-y border-gray-200">
+          <dl className="mt-10 space-y-3">
             {faqs.map((faq) => (
-              <Disclosure as="div" key={faq.id} className="py-5">
+              <Disclosure
+                as="div"
+                key={faq.id}
+                className="rounded-2xl bg-gray-50 px-6 py-5 ring-1 ring-inset ring-gray-200"
+              >
                 {({ open }) => (
                   <>
                     <dt>
@@ -233,7 +240,7 @@ export default function Membership(): JSX.Element {
                         </span>
                         <ChevronDownIcon
                           className={cx(
-                            'mt-1 h-5 w-5 flex-shrink-0 text-blue-700 transition-transform',
+                            'mt-1 h-5 w-5 shrink-0 text-blue-700 transition-transform',
                             open && 'rotate-180',
                           )}
                           aria-hidden="true"

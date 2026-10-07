@@ -21,10 +21,10 @@ const Button = ({
   children,
   variant = 'primary',
   className,
-}: ButtonProps): JSX.Element => {
+}: ButtonProps): React.JSX.Element => {
   const isExternal = href.startsWith('http')
   const classes = cx(
-    'inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-base font-semibold shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+    'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold shadow-xs transition-colors focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2',
     variants[variant],
     className,
   )

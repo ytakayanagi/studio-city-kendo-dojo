@@ -1,17 +1,15 @@
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
-import { DefaultSeo } from 'next-seo'
 
-import 'tailwindcss/tailwind.css'
-
-import SEO from '../next-seo.config'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/bricolage-grotesque'
+import '../styles/globals.css'
 
 import Layout from '../container/Layout/Layout'
 
-function App({ Component, pageProps }: AppProps): JSX.Element {
+function App({ Component, pageProps }: AppProps): React.JSX.Element {
   return (
     <ThemeProvider attribute="class">
-      <DefaultSeo {...SEO} />
       <Layout>
         <Component {...pageProps} />
       </Layout>

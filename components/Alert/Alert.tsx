@@ -7,11 +7,11 @@ type AlertProps = {
   href?: string
 }
 
-const Alert = ({ children, className }: AlertProps): JSX.Element => {
+const Alert = ({ children, className }: AlertProps): React.JSX.Element => {
   return (
     <div className={'rounded-md bg-blue-50 p-4 ' + className}>
       <div className="flex">
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <InformationCircleIcon
             className="h-5 w-5 text-blue-400"
             aria-hidden="true"

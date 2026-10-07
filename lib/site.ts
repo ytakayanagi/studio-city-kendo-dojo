@@ -14,6 +14,18 @@ export const address = {
   city: 'Studio City, CA 91604',
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=3921+Laurel+Canyon+Blvd+Studio+City+CA+91604',
+  entryNote:
+    'There is no entry off Laurel Canyon Blvd. You must enter off Maxwelton Rd at the main gate.',
+}
+
+export const saturday = {
+  frequency: 'Usually two Saturday afternoons a month',
+  note: 'Dates vary with the overall kendo schedule of events. Please email us to confirm dates and times.',
+  venue: 'San Fernando Valley Japanese Community Center',
+  street: '8850 Lankershim Blvd',
+  city: 'Sun Valley, CA 91352',
+  mapsUrl:
+    'https://www.google.com/maps/search/?api=1&query=8850+Lankershim+Blvd+Sun+Valley+CA+91352',
 }
 
 export const affiliations = [
@@ -40,12 +52,12 @@ export const affiliations = [
 export const practices = [
   {
     day: 'Friday',
-    time: '7:00pm – 9:00pm',
-    name: 'Practice',
+    time: '7:00pm – 8:35pm',
+    name: 'All levels',
   },
   {
     day: 'Friday',
-    time: '9:00pm – 10:00pm',
-    name: 'Advanced practice',
+    time: '8:40pm – 9:00pm',
+    name: 'Advanced',
   },
 ]
