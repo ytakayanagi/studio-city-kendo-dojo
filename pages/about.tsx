@@ -5,6 +5,7 @@ import Eyebrow from '../components/Eyebrow/Eyebrow'
 import LogoCloud from '../components/LogoCloud/LogoCloud'
 import PageHeader from '../components/PageHeader/PageHeader'
 import Team from '../components/Team/Team'
+import { photos } from '../lib/photos'
 
 const founders = [
   {
@@ -65,7 +66,12 @@ export default function About(): React.JSX.Element {
   return (
     <>
       <Seo title="About" />
-      <PageHeader eyebrow="About" title="What is kendo?" kanji="剣道">
+      <PageHeader
+        eyebrow="About"
+        title="What is kendo?"
+        kanji="剣道"
+        image={photos.dojoLineup}
+      >
         <p>
           Kendo (剣道 Kendō), meaning &ldquo;way of the sword&rdquo;, is a
           modern Japanese martial art of sword-fighting based on traditional
@@ -77,11 +83,23 @@ export default function About(): React.JSX.Element {
       {/* Dojo story */}
       <section className="bg-white py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          <div className="overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
+          <div className="grid grid-cols-2 gap-4">
             <img
-              className="aspect-800/484 w-full object-cover"
-              src="/about-photo.jpg"
-              alt="Studio City Kendo Dojo members in kendo armor"
+              className="col-span-2 aspect-4/3 w-full rounded-3xl object-cover shadow-2xl shadow-black/10"
+              src={photos.holidayParty.src}
+              alt={photos.holidayParty.alt}
+            />
+            <img
+              className="aspect-square w-full rounded-3xl object-cover"
+              src={photos.kirikaeshiDrill.src}
+              alt={photos.kirikaeshiDrill.alt}
+              loading="lazy"
+            />
+            <img
+              className="aspect-square w-full rounded-3xl object-cover"
+              src={photos.youngKendoka.src}
+              alt={photos.youngKendoka.alt}
+              loading="lazy"
             />
           </div>
           <div>
@@ -126,6 +144,26 @@ export default function About(): React.JSX.Element {
               </h3>
               <p className="mt-2 text-gray-400">{value.description}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Photo band */}
+      <section aria-label="Dojo photos" className="bg-black">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {[
+            photos.kamaeFront,
+            photos.nationalsMedalists,
+            photos.closingCeremony,
+            photos.nisseiMatch,
+          ].map((photo) => (
+            <img
+              key={photo.src}
+              className="aspect-square w-full object-cover"
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+            />
           ))}
         </div>
       </section>

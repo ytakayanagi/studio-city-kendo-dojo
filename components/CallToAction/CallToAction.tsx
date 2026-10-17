@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 import Button from '../Button/Button'
+import { photos } from '../../lib/photos'
 
 type CallToActionProps = {
   title?: string
@@ -14,6 +15,12 @@ const CallToAction = ({
   return (
     <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
       <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-blue-700 px-6 py-16 sm:px-12 lg:flex lg:items-center lg:justify-between lg:px-16 lg:py-20">
+        <img
+          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25 mix-blend-luminosity"
+          src={photos.xmasTournamentTeam.src}
+          alt=""
+          loading="lazy"
+        />
         <div
           aria-hidden="true"
           className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-blue-500/50 blur-3xl"

@@ -7,6 +7,7 @@ import CallToAction from '../components/CallToAction/CallToAction'
 import Eyebrow from '../components/Eyebrow/Eyebrow'
 import PageHeader from '../components/PageHeader/PageHeader'
 import { cx } from '../lib/cx'
+import { photos } from '../lib/photos'
 
 const membershipFees = [
   {
@@ -117,6 +118,7 @@ export default function Membership(): React.JSX.Element {
         eyebrow="Membership"
         title="How to join our dojo"
         kanji="入門"
+        image={photos.suburiLine}
       >
         <p>
           We recommend you trying out Kendo before joining. We offer a free

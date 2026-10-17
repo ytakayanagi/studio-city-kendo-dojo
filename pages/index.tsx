@@ -7,8 +7,6 @@ import {
   EyeIcon,
   MapPinIcon,
   SparklesIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
   HeartIcon,
 } from '@heroicons/react/24/outline'
 
@@ -16,7 +14,19 @@ import Button from '../components/Button/Button'
 import CallToAction from '../components/CallToAction/CallToAction'
 import Eyebrow from '../components/Eyebrow/Eyebrow'
 import NextPractice from '../components/NextPractice/NextPractice'
+import { cx } from '../lib/cx'
+import { photos } from '../lib/photos'
 import { address, affiliations } from '../lib/site'
+
+const competitionPhotos = [
+  {
+    photo: photos.nationalsTeam,
+    className: 'sm:col-span-2 sm:row-span-2',
+  },
+  { photo: photos.xmasTournamentMatch, className: 'sm:col-span-2' },
+  { photo: photos.memorialSonkyo, className: '' },
+  { photo: photos.torranceTournament, className: '' },
+]
 
 const terms = [
   { kanji: '剣道', romaji: 'Kendo', meaning: 'the way of the sword' },
@@ -35,18 +45,21 @@ const steps = [
     description:
       'Send us a quick message before you visit so we know to expect you and can suggest a good Friday to come.',
     icon: ChatBubbleLeftRightIcon,
+    photo: photos.holidayParty,
   },
   {
     name: 'Watch or try a practice',
     description:
       'Observe a class for free, or jump in. Your first two practices are a free trial, and there is no need to buy gear first.',
     icon: EyeIcon,
+    photo: photos.puttingOnMen,
   },
   {
     name: 'Learn the basics',
     description:
       'Beginners start with etiquette, footwork, posture, how to hold the shinai and practice swings called suburi.',
     icon: SparklesIcon,
+    photo: photos.suburiLine,
   },
 ]
 
@@ -55,19 +68,19 @@ const audiences = [
     title: 'Complete beginners',
     description:
       'Most people outside of Japan start kendo as adults. No martial arts background needed, just curiosity.',
-    icon: SparklesIcon,
+    photo: photos.kamaePair,
   },
   {
     title: 'Kids and families',
     description:
       'Our youngest student started at 5. Kids do best once they have a good attention span, and families can train together.',
-    icon: UserGroupIcon,
+    photo: photos.memorialKids,
   },
   {
     title: 'Returning kendoka',
     description:
       'Already practice kendo? You are welcome here. Get in touch before your first visit and come train with us.',
-    icon: AcademicCapIcon,
+    photo: photos.kakariGeiko,
   },
 ]
 
@@ -97,25 +110,21 @@ export default function Home(): React.JSX.Element {
       />
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-black">
+      <section className="relative isolate overflow-hidden bg-black lg:min-h-[52rem]">
         <img
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center] opacity-70"
-          src="/hero.jpg"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[65%_center] opacity-80"
+          src={photos.keikoMotion.src}
           alt=""
         />
         <div
-          className="absolute inset-0 -z-10 bg-linear-to-r from-black via-black/85 to-black/30"
+          className="absolute inset-0 -z-10 bg-linear-to-r from-black via-black/70 to-black/10"
           aria-hidden="true"
         />
         <div
           className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-black to-transparent"
           aria-hidden="true"
         />
-        <div
-          aria-hidden="true"
-          className="absolute -left-40 top-20 -z-10 h-144 w-xl rounded-full bg-blue-700/30 blur-3xl"
-        />
-        <div className="mx-auto grid max-w-7xl items-end gap-12 px-4 pb-16 pt-36 sm:px-6 sm:pb-24 sm:pt-48 lg:grid-cols-12 lg:px-8 lg:pb-28">
+        <div className="mx-auto grid max-w-7xl items-end gap-12 px-4 pb-16 pt-36 sm:px-6 sm:pb-24 sm:pt-56 lg:grid-cols-12 lg:px-8 lg:pb-28">
           <div className="animate-rise lg:col-span-7">
             <Eyebrow dark>剣道 · Kendo in Studio City</Eyebrow>
             <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl">
@@ -124,7 +133,7 @@ export default function Home(): React.JSX.Element {
                 sword.
               </span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-gray-300 sm:text-xl">
+            <p className="mt-8 max-w-xl text-lg leading-8 text-gray-200 sm:text-xl">
               For more than 20 years, Studio City Kendo Dojo has helped people
               in the southeast San Fernando Valley learn kendo. Beginners of all
               ages are welcome, and your first two practices are free.
@@ -186,8 +195,8 @@ export default function Home(): React.JSX.Element {
             <figure className="group relative isolate overflow-hidden rounded-3xl bg-black md:col-span-6 md:row-span-2 lg:col-span-7">
               <img
                 className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="/about-photo.jpg"
-                alt="Studio City Kendo Dojo members, kids and adults, in kendo armor"
+                src={photos.fallPromotions.src}
+                alt={photos.fallPromotions.alt}
               />
               <div
                 aria-hidden="true"
@@ -215,15 +224,24 @@ export default function Home(): React.JSX.Element {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between rounded-3xl bg-black p-8 text-white md:col-span-3 lg:col-span-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">
+            <div className="relative isolate flex flex-col justify-between overflow-hidden rounded-3xl bg-black p-8 text-white md:col-span-3 lg:col-span-5">
+              <img
+                className="absolute inset-0 -z-20 h-full w-full object-cover opacity-60"
+                src={photos.fridayKeiko.src}
+                alt=""
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-linear-to-t from-black via-black/40 to-black/10"
+              />
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
                 Every week
               </p>
               <div>
                 <p className="font-display text-4xl font-extrabold">
                   Fridays, 7pm
                 </p>
-                <p className="mt-1 text-gray-400">
+                <p className="mt-1 text-gray-300">
                   All levels until 8:35pm, then advanced until 9pm.
                 </p>
               </div>
@@ -309,13 +327,24 @@ export default function Home(): React.JSX.Element {
             </Link>
           </div>
           <div className="relative">
-            <p
-              aria-hidden="true"
-              className="select-none text-center font-display text-[9rem] font-extrabold leading-none text-white sm:text-[13rem]"
-            >
-              剣道
-            </p>
-            <div className="mt-8 grid grid-cols-3 gap-3">
+            <figure className="relative isolate overflow-hidden rounded-3xl">
+              <img
+                className="aspect-3/2 w-full object-cover"
+                src={photos.senseiDemonstration.src}
+                alt={photos.senseiDemonstration.alt}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"
+              />
+              <p
+                aria-hidden="true"
+                className="absolute bottom-2 right-5 select-none font-display text-7xl font-extrabold leading-none text-white sm:text-8xl"
+              >
+                剣道
+              </p>
+            </figure>
+            <div className="mt-3 grid grid-cols-3 gap-3">
               {terms.slice(1, 4).map((term) => (
                 <div
                   key={term.romaji}
@@ -350,29 +379,33 @@ export default function Home(): React.JSX.Element {
             </p>
           </div>
           <ol className="relative mt-16 grid gap-6 md:grid-cols-3">
-            <div
-              aria-hidden="true"
-              className="absolute left-0 right-0 top-10 hidden h-px bg-linear-to-r from-blue-700 via-blue-300 to-transparent md:block"
-            />
             {steps.map((step, index) => (
               <li
                 key={step.name}
-                className="relative rounded-3xl bg-white p-8 shadow-xs ring-1 ring-inset ring-gray-200"
+                className="relative overflow-hidden rounded-3xl bg-white shadow-xs ring-1 ring-inset ring-gray-200"
               >
-                <div className="flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-700 text-white shadow-lg shadow-blue-700/30">
-                    <step.icon className="h-6 w-6" aria-hidden="true" />
-                  </span>
-                  <span className="font-display text-5xl font-extrabold text-gray-100">
-                    0{index + 1}
-                  </span>
+                <img
+                  className="aspect-16/9 w-full object-cover"
+                  src={step.photo.src}
+                  alt={step.photo.alt}
+                  loading="lazy"
+                />
+                <div className="p-8">
+                  <div className="-mt-14 flex items-end justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-700 text-white shadow-lg shadow-blue-700/30">
+                      <step.icon className="h-6 w-6" aria-hidden="true" />
+                    </span>
+                    <span className="font-display text-5xl font-extrabold text-gray-200">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-display text-2xl font-bold text-gray-900">
+                    {step.name}
+                  </h3>
+                  <p className="mt-3 text-base leading-7 text-gray-600">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="mt-8 font-display text-2xl font-bold text-gray-900">
-                  {step.name}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-gray-600">
-                  {step.description}
-                </p>
               </li>
             ))}
           </ol>
@@ -392,19 +425,72 @@ export default function Home(): React.JSX.Element {
             {audiences.map((item) => (
               <div
                 key={item.title}
-                className="group rounded-3xl p-8 ring-1 ring-inset ring-gray-200 transition-colors hover:bg-black hover:ring-black"
+                className="group relative isolate flex min-h-112 flex-col justify-end overflow-hidden rounded-3xl bg-black p-8"
               >
-                <item.icon
-                  className="h-8 w-8 text-blue-700 transition-colors group-hover:text-blue-400"
-                  aria-hidden="true"
+                <img
+                  className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={item.photo.src}
+                  alt={item.photo.alt}
+                  loading="lazy"
                 />
-                <h3 className="mt-6 font-display text-2xl font-bold text-gray-900 transition-colors group-hover:text-white">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 bg-linear-to-t from-black via-black/50 to-transparent"
+                />
+                <h3 className="font-display text-2xl font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-base leading-7 text-gray-600 transition-colors group-hover:text-gray-300">
+                <p className="mt-3 text-base leading-7 text-gray-300">
                   {item.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Competition */}
+      <section className="relative isolate overflow-hidden bg-black py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-2xl">
+              <Eyebrow dark>Beyond the dojo</Eyebrow>
+              <h2 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                From Friday practice to Nationals.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                Members compete with Team SCKO at tournaments across Southern
+                California and at the national level, and bring home medals
+                along the way. Competing is always optional.
+              </p>
+            </div>
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 whitespace-nowrap text-base font-semibold text-blue-400 hover:text-blue-300"
+            >
+              See the full gallery
+              <ArrowRightIcon className="h-5 w-5" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-14 grid auto-rows-[14rem] gap-4 sm:grid-cols-2 lg:auto-rows-[16rem] lg:grid-cols-4">
+            {competitionPhotos.map(({ photo, className }) => (
+              <figure
+                key={photo.src}
+                className={cx(
+                  'group relative overflow-hidden rounded-3xl bg-gray-900',
+                  className,
+                )}
+              >
+                <img
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                />
+                <figcaption className="absolute bottom-3 left-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                  {photo.caption}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

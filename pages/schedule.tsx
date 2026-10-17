@@ -9,14 +9,12 @@ import {
 import CallToAction from '../components/CallToAction/CallToAction'
 import Eyebrow from '../components/Eyebrow/Eyebrow'
 import PageHeader from '../components/PageHeader/PageHeader'
+import { photos } from '../lib/photos'
 import { address, practices, saturday } from '../lib/site'
-import { useNextPractice } from '../lib/useNextPractice'
 
 const hours = ['7pm', '8pm', '9pm']
 
 export default function Schedule(): React.JSX.Element {
-  const nextDate = useNextPractice()
-
   return (
     <>
       <Seo title="Schedule" />
@@ -24,6 +22,7 @@ export default function Schedule(): React.JSX.Element {
         eyebrow="Schedule"
         title="We practice every Friday."
         kanji="稽古"
+        image={photos.jigeikoFloor}
       >
         <p>
           Practice is every Friday evening, plus two Saturday afternoons most
@@ -42,11 +41,10 @@ export default function Schedule(): React.JSX.Element {
                   Friday
                 </p>
               </div>
-              {nextDate && (
-                <p className="rounded-full bg-blue-700 px-4 py-2 text-sm font-semibold">
-                  Next: {nextDate}
-                </p>
-              )}
+              <p className="max-w-xs text-sm text-gray-300">
+                Practice may be cancelled or moved for holidays and events.
+                Please contact us to confirm before your visit.
+              </p>
             </div>
 
             {/* Timeline, 7pm to 9pm: all levels 7:00-8:35, advanced 8:40-9:00 */}

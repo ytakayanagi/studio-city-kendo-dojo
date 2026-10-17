@@ -6,7 +6,11 @@ type EyebrowProps = {
   className?: string
 }
 
-const Eyebrow = ({ children, dark, className }: EyebrowProps): React.JSX.Element => (
+const Eyebrow = ({
+  children,
+  dark,
+  className,
+}: EyebrowProps): React.JSX.Element => (
   <p
     className={cx(
       'inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em]',

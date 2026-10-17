@@ -3,6 +3,7 @@ import { CheckCircleIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 import ContactForm from './ContactForm/ContactForm'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { photos } from '../../lib/photos'
 import { address, practices, saturday } from '../../lib/site'
 
 const expectations = [
@@ -16,7 +17,13 @@ export default function ContactPage(): React.JSX.Element {
   return (
     <>
       <Seo title="Contact" />
-      <PageHeader eyebrow="Contact" title="Come try kendo with us" kanji="礼">
+      <PageHeader
+        eyebrow="Contact"
+        title="Come try kendo with us"
+        kanji="礼"
+        image={photos.fumikomiStrike}
+        imagePosition="30% center"
+      >
         <p>
           Questions about kendo, a free trial practice, or signing up your
           child? Send us a message and we will get back to you.
