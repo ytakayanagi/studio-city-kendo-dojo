@@ -40,6 +40,11 @@
     "react-google-recaptcha": "^3.1.0",
     "react-stickynode": "^5.0.2"
   },
+  "overrides": {
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "^4.1.0"
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
     "@tailwindcss/postcss": "^4.3.3",
