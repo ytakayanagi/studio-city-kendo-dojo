@@ -22,7 +22,6 @@ const instructors = [
   {
     name: 'Carolyn Tynan Yatomi',
     rank: '6-dan Renshi',
-    role: 'Head Instructor',
   },
   {
     name: 'David Daniel Watanabe',
