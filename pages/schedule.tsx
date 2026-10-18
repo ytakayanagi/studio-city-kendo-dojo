@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import Seo from '../components/Seo/Seo'
 import {
+  ArrowRightIcon,
   ArrowUpRightIcon,
+  EnvelopeIcon,
   EyeIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline'
@@ -144,38 +146,27 @@ export default function Schedule(): React.JSX.Element {
               <p className="mt-4 text-lg text-gray-700">
                 {saturday.frequency}.
               </p>
-              <p className="mt-2 text-gray-600">
-                {saturday.note}{' '}
-                <Link
-                  href="/contact"
-                  className="font-semibold text-blue-700 underline hover:text-blue-600"
-                >
-                  Contact us
-                </Link>
-              </p>
+              <p className="mt-2 text-gray-600">{saturday.note}</p>
             </div>
             <div className="rounded-3xl bg-white p-8 ring-1 ring-inset ring-gray-200">
-              <MapPinIcon
+              <EnvelopeIcon
                 className="h-8 w-8 text-blue-700"
                 aria-hidden="true"
               />
               <h2 className="mt-6 font-display text-2xl font-bold text-gray-900">
-                {saturday.venue}
+                Joining on a Saturday?
               </h2>
-              <address className="mt-2 text-base not-italic leading-7 text-gray-600">
-                {saturday.street}
-                <br />
-                {saturday.city}
-              </address>
-              <a
-                href={saturday.mapsUrl}
-                target="_blank"
-                rel="noreferrer"
+              <p className="mt-2 text-base leading-7 text-gray-600">
+                Get in touch and we will let you know the next Saturday practice
+                date, time and location.
+              </p>
+              <Link
+                href="/contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-semibold text-white hover:bg-gray-800"
               >
-                Get directions
-                <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
-              </a>
+                Contact us
+                <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>

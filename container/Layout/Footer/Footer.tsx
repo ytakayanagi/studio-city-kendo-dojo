@@ -64,7 +64,7 @@ const Footer = (): React.JSX.Element => {
               ))}
               <li>
                 <span className="block text-white">Saturdays</span>
-                Twice a month, email to confirm
+                Twice a month, contact us for details
               </li>
             </ul>
           </div>

@@ -21,12 +21,7 @@ export const address = {
 
 export const saturday = {
   frequency: 'Usually two Saturday afternoons a month',
-  note: 'Dates vary with the overall kendo schedule of events. Please email us to confirm dates and times.',
-  venue: 'San Fernando Valley Japanese Community Center',
-  street: '8850 Lankershim Blvd',
-  city: 'Sun Valley, CA 91352',
-  mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=8850+Lankershim+Blvd+Sun+Valley+CA+91352',
+  note: 'Dates, times and location vary with the overall kendo schedule of events. Please contact us if you would like to join a Saturday practice.',
 }
 
 export const affiliations = [

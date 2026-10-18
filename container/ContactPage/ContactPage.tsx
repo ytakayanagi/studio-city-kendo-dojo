@@ -97,8 +97,7 @@ export default function ContactPage(): React.JSX.Element {
               </ul>
               <p className="mt-4 text-base text-blue-100">
                 <span className="font-semibold text-white">Saturdays:</span>{' '}
-                {saturday.frequency.toLowerCase()} at the {saturday.venue},{' '}
-                {saturday.street}, {saturday.city}. {saturday.note}
+                {saturday.frequency.toLowerCase()}. {saturday.note}
               </p>
             </div>
 
